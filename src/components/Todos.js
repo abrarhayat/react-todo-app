@@ -53,7 +53,7 @@ const Todos = () => {
     let url = 'https://node-ts-abrar.herokuapp.com/todo';
     let method = 'POST';
     if (editedTodo) {
-      url = url + '/' + editedTodo.id;
+      url = url + '/' + (editedTodo._id || editedTodo.id);
       method = 'PUT';
     }
     const response = await fetch(url, {
@@ -88,7 +88,7 @@ const Todos = () => {
                 <button onClick={startEditHandler.bind(null, todo)}>
                   Edit
                 </button>
-                <button onClick={deleteTodoHandler.bind(null, todo.id)}>
+                <button onClick={deleteTodoHandler.bind(null, (todo._id || todo.id))}>
                   Delete
                 </button>
               </div>
