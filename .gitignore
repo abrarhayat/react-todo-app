@@ -1,3 +1,6 @@
 .vscode
 .idea
 node_modules
+build
+.firebase
+firebase-debug.log
