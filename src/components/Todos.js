@@ -9,7 +9,7 @@ const Todos = () => {
 
   const getTodos = useCallback(async () => {
     try {
-      const response = await fetch('https://deno-todo-abrar.herokuapp.com/todos');
+      const response = await fetch('https://app-fbcaedcb-5b88-41e8-bc33-286ee1860572.cleverapps.io/todos');
       const todosData = await response.json();
       setTodos(todosData.todos);
     } catch (err) {
@@ -33,7 +33,7 @@ const Todos = () => {
   };
 
   const deleteTodoHandler = async (todoId) => {
-    const response = await fetch('https://deno-todo-abrar.herokuapp.com/todo/' + todoId, {
+    const response = await fetch('https://app-fbcaedcb-5b88-41e8-bc33-286ee1860572.cleverapps.io/todo/' + todoId, {
       method: 'DELETE',
     });
     const data = await response.json();
@@ -50,7 +50,7 @@ const Todos = () => {
     event.preventDefault();
     setEditedTodo(null);
     setEnteredText('');
-    let url = 'https://deno-todo-abrar.herokuapp.com/todo';
+    let url = 'https://app-fbcaedcb-5b88-41e8-bc33-286ee1860572.cleverapps.io/todo';
     let method = 'POST';
     if (editedTodo) {
       url = url + '/' + (editedTodo._id || editedTodo.id);
